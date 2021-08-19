@@ -1,0 +1,258 @@
+#drum-machine{
+  display: flex;
+  background-color: #1B1B1B;
+  width: 600px;
+  padding: 35px;
+  margin: 0px 50px;
+  z-index: 1;
+  border: 6px solid #FFFFFF;
+}
+
+/* Keyboard component */ 
+#drum-elements{
+  display: grid;
+  width: 180px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 7px 7px;
+}
+
+.drum-pad{
+  font-family: inherit;
+  font-size: inherit;
+  padding: 30px 40px;
+  border-radius: 7px;
+  background-color: #d3d3d3;
+  color: #000000;
+  outline: 0;
+  border: none;
+}
+
+.drum-pad:hover{
+  cursor: pointer;
+}
+
+#left-div{
+  flex: 1;
+}
+
+.Heater-1{
+  background-color:#FF6663;
+}
+
+.Heater-2{
+  background-color: #FF9AA2;
+}
+
+.Heater-3{
+  background-color: #FEB144;
+}
+
+.Heater-4{
+  background-color: #FFBE7BFF;
+}
+
+.Clap{
+  background-color: #FDFD97;
+}
+
+.Open-HH{
+  background-color: #9EE09E;
+}
+
+.Kick-n\'-Hat{
+  background-color: #B5EAD7;
+}
+
+.Kick{
+  background-color: #9EC1CF;
+}
+
+.Closed-HH{
+  background-color: #CC99C9;
+}
+
+/* Display component */
+#display{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  width: 180px;
+  height: 50px;
+  background-color: #d3d3d3;
+  margin: 15px 0 30px;
+}
+
+#right-div{
+  flex: 0.74;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  color: #FFFFFF;
+  font-size: inherit;
+  padding: 10px 0;
+}
+
+#display-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The switch - the box around the slider */
+.switch{
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 32px;
+  margin-top: 5px;
+  outline: none;
+}
+
+/* Hide default HTML checkbox */
+.switch input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: -4.5px;
+  background-color: #000000;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before{
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #00C0A3;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+input:checked + .slider{
+  background-color: #000000;
+}
+
+input:focus + .slider{
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before{
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+#volume-control{
+  width: 240px;
+  cursor: pointer;
+}
+
+input[type=range]{
+  height: 5px;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  margin: 0 0 27px;
+  outline: none; 
+  background-color: #FFF;
+}
+
+input[type=range]::-webkit-slider-thumb{
+  height: 30px;
+  width: 10px;
+  background: #00C0A3;
+  -webkit-appearance: none;
+}
+
+input[type=range]::-moz-range-thumb{
+  height: 30px;
+  width: 10px;
+  background: #00C0A3;
+  -moz-appearance: none;
+}
+
+input[type=range]::-ms-thumb{
+  height: 30px;
+  width: 10px;
+  background: #00C0A3;
+  -webkit-appearance: none;
+}
+
+#display-text{
+  color: black;
+  z-index: 3; 
+}
+
+/* Media queries */
+@media only screen and (min-width: 500px) and (max-width: 690px){
+  #drum-machine{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  }
+
+  #drum-elements{
+    display: grid;
+    margin: 0 36px;
+    grid-gap: 9px 9px;
+  }
+
+  .drum-pad{
+    font-size: 1rem;
+    padding: 18px 28px;
+  }
+
+  #right-div{
+    font-size: 0.9rem;
+    padding-top: 30px;
+    padding-bottom: 0;
+  }
+
+  #display{
+    width: 170px;
+    height: 35px;
+    margin: 12px 0 27px;
+  }
+
+  .switch{
+    height: 24px;
+    margin-top: 2px;
+  }
+
+  .slider:before{
+    height: 18px;
+    width: 26px;
+    bottom: 3px;
+  }
+  
+  #volume-control{
+    width: 220px;
+  }
+
+  input[type=range]{
+    margin-top: -3px;
+    margin-bottom: 21px;
+  }
+
+  input[type=range]::-webkit-slider-thumb{
+    height: 25px;
+    width: 9px;
+  }
+}
+
+
+
